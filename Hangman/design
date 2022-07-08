@@ -1,0 +1,45 @@
+The objective of this exercise is to create a hangman game in the command-line using Python3
+Ask users to guess a random word from a library (use SOWPODS)
+Only let the user guess 6 times, and tell the user how many guesses they have left.
+Keep track of the letters the user guessed. If the user guesses a letter they already guessed, don’t penalize them - let them guess again.
+Keep uncovering letters they’ve already guessed.
+
+Example interaction.
+
+
+>>> Welcome to Hangman!
+_ _ _ _ _ _ _ _ _
+>>> Guess your letter: S
+Incorrect!
+>>> Guess your letter: E
+E _ _ _ _ _ _ _ E
+...
+
+
+classes
+
+HangmanDictionary
+- Set the dictionary source (could be an array, an input stream, a database, or HTTP connection).
+- Load a dictionary (for a given language).
+- Return a randomly selected word.
+
+HangmanGame
+- Creates instances of the required classes
+- Exits the application.
+- Creates a new game.
+
+Model
+- Load words - HangmanDictionary
+- Retrieves positions that a letter is found (or throws an exception).
+- Tracks incorrect guesses.
+
+View
+- Updates the letters being displayed.
+- Notifies listeners of guesses.
+- Notifies listeners of when the user requests to quit.
+
+Controller
+- Listens for events from the view.
+- Tells the view when the game is over.
+- Tells the view when another guess is made.
+- Tells the view where to put the letters.
